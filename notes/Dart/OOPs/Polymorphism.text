@@ -1,0 +1,3 @@
+poly means many and morph means form . in dart polymorphism is the ability of the object means a object can have many different forms by overriding its parent methods.
+In real world polymorphism is a ability to update or modifying functionallity of a parent class.
+we can achieve polymorphism by method overridding

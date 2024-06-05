@@ -1,0 +1,2 @@
+1. annonymous function : (value){}
+2. Arrow function:  returnType functionName(parameters...) => expression;

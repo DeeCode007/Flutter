@@ -1,0 +1,55 @@
+inheritance : inheritance is a sharing of behaviour between two classes. we can extend properties and method of a class into another class by using extend keyword. inheritance creates is-a relationship means truck is a vehicle. student is a person means truck will inherit vehicle's properties and methods.
+
+class ParentClass {
+  // Parent class code
+}
+
+class ChildClass extends ParentClass {
+  // Child class code
+}.
+
+there are four three type of inheritance in dart.
+single inheritance
+multilevel inheritance where a class will extend a class and that class will also extend another class and the first child can access both classes properties.
+heirarichal inheritance: means there would be a paranet class and multiple child class.
+
+there is a multiple inheritance in oop but dart doesnot supportmultiple inheritance because it can lead to ambiguity. For example, if class Apple inherits class Fruit and class Vegetable, then there may be two methods with the same name eat. If the method is called, then which method should be called? This is the reason why Dart does not support multiple inheritance.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+inheritance of constructor
+:above inheritance was without constructors but what if they are having constructor? so we will understand by below example
+
+
+class Laptop {
+  String? name;
+  String? model;
+  Laptop(this.name, this.model) {
+    print(name);
+    print("Laptop constructor");
+  }
+}
+
+class MacBook extends Laptop {
+  int? price;
+  String? name;
+  String? model;
+  MacBook(String this.name, String this.model, int price):super(name,model) {
+    print("Model:$model, Price:$price");
+  }
+}
+
+void main() {
+  MacBook lap1 = MacBook("Ipad", "z0", 4000);
+}
+
+
+here MacBook extends Laptop and when we create a instance of it then macbook constructor will be called and it will give value to super class constructor as well as for itself too.
+Syntax for giving values to super class constructor.
+
+childClassConstructorName(both classes parameter):super(Super class parameter){
+    constructor Body
+}
+
+Note: Super is used to refer to the parent class. It is used to call the parent class’s properties and methods.
+

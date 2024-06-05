@@ -1,0 +1,26 @@
+object : Object is a instance of a class and can contain properties and methods.  bicycle object might have attributes/properties like color, size, and current speed. It might have methods like changeGear, pedalFaster, and brake.
+
+Syntax : 
+ClassName objectName = ClassName() //object name should start with small letter.
+
+example:
+//creating a class.
+class Animal {
+    //properties
+  String? name;
+  String? breed;
+  String? age;
+    //method
+  void info() {
+    print("My name is $name, I am $breed and my age is $age");
+  }
+}
+
+void main() {
+    //creating an object or instantiation
+  Animal awara = Animal(); 
+  awara.name = "Kaalu";
+  awara.breed = "Labrador";
+  awara.age = "5";
+  awara.info();
+}

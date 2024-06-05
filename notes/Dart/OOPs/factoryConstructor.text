@@ -1,0 +1,84 @@
+Factory Constructor:
+A factory constructor gives more flexibility to create an object. Generative constructors only create an instance of the class. But, the factory constructor can return an instance of the class or even subclass. It is also used to return the cached instance of the class.
+
+
+Rules For Factory Constructors
+Factory constructor must return an instance of the class or sub-class.
+You can’t use this keyword inside factory constructor.
+It can be named or unnamed and called like normal constructor.
+It can’t access instance members of the class.
+
+// enum ShapeType
+enum ShapeType { circle, rectangle }
+
+// abstract class Shape
+abstract class Shape {
+  // factory constructor
+  factory Shape(ShapeType type) {
+    switch (type) {
+      case ShapeType.circle:
+        return Circle();
+      case ShapeType.rectangle:
+        return Rectangle();
+      default:
+        throw 'Invalid shape type';
+    }
+  }
+  // method
+  void draw();
+}
+
+class Circle implements Shape {
+  // implement draw method
+  @override
+  void draw() {
+    print('Drawing circle');
+  }
+}
+
+class Rectangle implements Shape {
+  // implement draw method
+  @override
+  void draw() {
+    print('Drawing rectangle');
+  }
+}
+
+void main() {
+  // create Shape object
+  Shape shape = Shape(ShapeType.circle);
+  Shape shape2 = Shape(ShapeType.rectangle);
+  shape.draw();
+  shape2.draw();
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
+SingleTon
+
+Singletons are a common design pattern in object-oriented programming. A singleton class can have only one instance and provides a global point of access to it. You can create a singleton in Dart by defining a factory constructor that always returns the same instance. It is mostly useful when you want to create a single instance of a class and use it throughout the application like database connection app.
+
+This code creates a Singleton class that can only be instantiated once, and provides a factory constructor to get the instance of the class. The main method creates two objects of the Singleton class, and prints the hashcode of the objects to verify that they are same.
+
+// Singleton using dart factory
+class Singleton {
+ // static variable
+ static final Singleton _instance = Singleton._internal();
+ 
+// factory constructor
+ factory Singleton() {
+   return _instance;
+ }
+ // private constructor 
+ Singleton._internal();
+}
+ 
+void main() {
+ Singleton obj1 = Singleton();
+ Singleton obj2 = Singleton();
+ print(obj1.hashCode);
+ print(obj2.hashCode);
+}
+
+
+ 

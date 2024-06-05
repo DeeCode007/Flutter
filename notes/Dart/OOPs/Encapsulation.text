@@ -1,0 +1,128 @@
+Encapsulation:
+We can achieve encapsulation by hiding the data in the library by using private property.
+By default, every .dart file is a library. A library is a collection of functions and classes. A library can be imported into another library using the import keyword.
+Encapsulation can be achieved by Declaring the class properties as private by using underscore(_).
+Providing public getter and setter methods to access and update the value of private property.
+
+Note: Dart doesn’t support keywords like public, private, and protected. Dart uses _ (underscore) to make a property or method private. The encapsulation happens at library level, not at class level means we can access private properties in the same file.
+so the solution of this that To see private properties in action, you must create a separate file for the class and import it into the main file.
+
+
+
+
+class Employee {
+  // Private properties
+  int? _id;
+  String? _name;
+
+// Getter method to access private property _id
+  int getId() {
+    return _id!;
+  }
+// Getter method to access private property _name
+  String getName() {
+    return _name!;
+  }
+// Setter method to update private property _id
+  void setId(int id) {
+    this._id = id;
+  }
+// Setter method to update private property _name
+  void setName(String name) {
+    this._name = name;
+  }
+  
+}
+
+void main() {
+  // Create an object of Employee class
+  Employee emp = new Employee();
+  // setting values to the object using setter
+  emp.setId(1);
+  emp.setName("John");
+
+  // Retrieve the values of the object using getter
+  print("Id: ${emp.getId()}");
+  print("Name: ${emp.getName()}");
+}
+
+Note : we can set setter and getter by following Syntax as well.
+dataType get methodName => "$variable $variable...so on";
+set Methodname(datatype parameter) => this.variable = Methodname;
+
+----------------------------------------------------------------------------------------------------------------------
+We can use getter as :
+class NoteBook {
+  // Private properties
+  String _name;
+  double _prize;
+
+  // Constructor
+  NoteBook(this._name, this._prize);
+
+  // Getter to access private property _name
+  String get name {
+    if (_name == "") {
+      return "No Name";
+    }
+    return this._name;
+  }
+
+  // Getter to access private property _prize
+  double get price {
+    return this._prize;
+  }
+}
+
+void main() {
+  // Create an object of NoteBook class
+  NoteBook nb = new NoteBook("Apple", 1000);
+  print("First Notebook name: ${nb.name}");
+  print("First Notebook price: ${nb.price}");
+  NoteBook nb2 = new NoteBook("", 500);
+  print("Second Notebook name: ${nb2.name}");
+  print("Second Notebook price: ${nb2.price}");
+}
+
+In this example below, there is a class named NoteBook. The class has two private properties _name and _prize. There are two getters name and price to access the value of the properties. If you provide a blank name, then it will return No Name.
+
+----------------------------------------------------------------------------------------------------------------------------
+Setter:
+
+class NoteBook {
+  // Private properties
+  String? _name;
+  double? _prize;
+
+  // Setter to update the value of name property
+  set name(String name) => _name = name;
+
+  // Setter to update the value of price property
+  set price(double price) {
+    if (price < 0) {
+      throw Exception("Price cannot be less than 0");
+    }
+    this._prize = price;
+  }
+
+  // Method to display the values of the properties
+  void display() {
+    print("Name: $_name");
+    print("Price: $_prize");
+  }
+}
+
+void main() {
+  // Create an object of NoteBook class
+  NoteBook nb = new NoteBook();
+  // setting values to the object using setter
+  nb.name = "Dell";
+  nb.price = 250;
+
+  // Display the values of the object
+  nb.display();
+}
+
+In this example, there is a class named NoteBook. The class has two private properties _name and _prize. If the value of _prize is less than 0, we will throw an exception. There are also two setters name and price to update the value of the properties. The class also has a method display() to display the values of the properties.
+
+

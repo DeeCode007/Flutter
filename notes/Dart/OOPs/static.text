@@ -1,0 +1,8 @@
+We can define a static variable or static method only in the class.
+if we define a variable or method static then we can use it anywhere and we can call those properties and methods without making a object and also in other classes
+we can't give value to static variable through constructor but we can access the static variable in the constructor block. and if we change it in the constructor block then the value of the static variable will also be changed for all the class block or global block.
+that static variable will be shared to the all object created by the same class.
+
+Static Method:
+The concept of the static method is also similar to static variable. The static methods are the member of the class instead of the class instance. The static methods can use only static variables and can invoke the static method of the class. We don't need to create an instance of class the access it. The static method is useful when we want to use it in other classes.
+

@@ -1,0 +1,38 @@
+const and final
+
+const:
+const keyword used to make a variable to store a compile time constant value. Compile time constant value is a value which will be constant while compiling :-)
+
+For example 5 is a compile time constant. While DateTime.now() which is not compile time constant. Because this method will return the time when the line is getting executed at runtime. So we can't assign the DateTime.now() to a const variable.
+
+const a = 5;
+// Uncommenting below statement will cause compile time error.
+// Because we can't able to assign a runtime value to a const variable
+// const b = DateTime.now();
+and also we can't give const value to var data type.
+
+Note : We can't declare a variable const in the class because if we made a instance variable const and then its values would be fixed for all the objects and its againts the class defination so we use static keyword so that all object can use this instance variable.
+
+
+
+Case: 1 
+Class A {
+    final a, b;
+    const A(this.a, this.b);
+}
+
+void main () {
+    // There is no way to change a field of object once it's 
+    // initialized.
+    const immutableObja = const A(5, 6);
+    // Uncommenting below statement will give compilation error.
+    // Because you are trying to reinitialize a const variable
+    // with other value
+    // immutableObja = const A(7, 9);
+
+    // But the below one is not the same. Because we are mentioning objA 
+    // is a variable of a class A. Not const. So we can able to assign
+    // another object of class A to objA.
+    A objA = const A(8, 9);
+    // Below statement is acceptable.
+    objA = const A(10, 11);

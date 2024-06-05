@@ -1,0 +1,33 @@
+Syntax : GridView.count{
+    crossAxixCount : interger how many column we want in a row
+    mainAxixSpacing:
+    crossAxixSpacing:
+    other Properties
+    Childeren[
+        use diffrent widget as our need.
+    ]
+}
+
+Syntax: GridView.extent{
+    maxCrossAxixExtent : interger for sizing of the column and and how many colomn will fit in a row it will depend on the size
+    mainAxixSpacing:
+    crossAxixSpacing:
+    otherProperties
+    Childeren[
+        use diffrent widget as our need.
+    ]
+}
+
+Syntax GridView.builder(
+    itemBuilder : (context,index){
+        return widget (a common widget and type you want to apply on every colomn of grid)
+    },
+    itemCount: no of total columns you want in Grid with same widget,
+    gridDelegate : SilverGridDelegateWithCrossAxixCount(
+        then properties of GridView.count or you can choose SilverGridDelegateWithMaxCrossAxixExtent(
+            the properties of GridView.extent
+        )
+    ) 
+)
+Note :  Gridview take all vertical space and try to expand as much as it can so we can't use it in other widget who takes same vertical space like Gridview , like column etc so if we want to use a Gridview in column then we need to put Gridview in a container and set height of the container or use method shrinkwap .
+

@@ -1,0 +1,67 @@
+Abstraction (from the Latin abs, meaning away from and trahere , meaning to draw) is the process of taking away or removing characteristics from something in order to reduce it to a set of essential characteristics. In object-oriented programming, abstraction is one of three central principles (along with encapsulation and inheritance). Through the process of abstraction, a programmer hides all but the relevant data about an object in order to reduce complexity and increase efficiency. In the same way that abstraction sometimes works in art, the object that remains is a representation of the original, with unwanted detail omitted. The resulting object itself can be referred to as an abstraction, meaning a named entity made up of selected attributes and behavior specific to a particular usage of the originating entity. Abstraction is related to both encapsulation and data hiding.
+
+Abstract classes are classes that cannot be initialized. It is used to define the behavior of a class that can be inherited by other classes. An abstract class is declared using the keyword abstract.
+
+abstract class ClassName {
+  //Body of abstract class
+  method1();
+  method2();
+}
+
+im my words: Abstract class is a class which define the some behavior for the its subclasses. we need to declare that behavior in subclass.
+
+
+example:
+abstract class Bank {
+  String name;
+  double rate;
+
+  // Constructor
+  Bank(this.name, this.rate);
+
+  // Abstract method
+  void interest();
+
+  //Non-Abstract method: It have an implementation
+  void display() {
+    print('Bank Name: $name');
+  }
+}
+
+class SBI extends Bank {
+  // Constructor
+  SBI(String name, double rate) : super(name, rate);
+
+  // Implementation of interest()
+  @override
+  void interest() {
+    print('The rate of interest of SBI is $rate');
+  }
+}
+
+class ICICI extends Bank {
+  // Constructor
+  ICICI(String name, double rate) : super(name, rate);
+
+  // Implementation of interest()
+  @override
+  void interest() {
+    print('The rate of interest of ICICI is $rate');
+  }
+}
+
+void main() {
+  SBI sbi = SBI('SBI', 8.4);
+  ICICI icici = ICICI('ICICI', 7.3);
+
+  sbi.interest();
+  icici.interest();
+  icici.display();
+}
+
+
+Key Points To Remember
+You can’t create an object of an abstract class.
+It can have both abstract and non-abstract methods.
+It is used to define the behavior of a class that other classes can inherit.
+Abstract method only has a signature and no implementation.

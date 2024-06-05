@@ -1,0 +1,88 @@
+Constructor is a special type of method which used to initialize an object. Constructor call automatically when we create object. it can be used to initialize values to the object properties. 
+
+
+Key points : 
+1. the Constructor name should be the same as class name.
+2. Constructor doesnot have any returnType.
+3. we can call Constructor once only and it will be called automatically while creating object.
+4. we use it for initialize an object.
+
+
+-----------------------------------------------------------------------------------------------------------------
+Case : 1 When we use this keyword and give parameters to the Constructor.
+class ClassName{
+    String? name;
+    int? age;
+
+    //Constructor
+    ClassName(this.name,this.age){
+        print("Name is $this.name, and age is $this.age");
+    }
+    void ageCheck(){
+        (age! >18||age! ==18) ? print("you can vote") : ("You cant vote");
+    }
+}
+
+void main(){
+    ClassName objectName = ClassName("Deepak",25);//here Constructor will be called automatically and The this keyword is used to refer to the current instance of the class. It is used to access the current class properties. means when a Constructor will be called and we will give parameters to this, then by this keyword, the value will be given to the current class properties.
+
+
+    objectName.ageCheck();// hence we used this keyword before so the stored in the class properties and now we can use it inside the Constructor as well as in other class methods.
+}
+
+Output = name is Deepak and age is 25
+you can vote
+---------------------------------------------------------------------------------------------------------------------
+
+Case:2 When we don't use this keyword
+class ClassName{
+    String? name;
+    int? age;
+
+    //Constructor
+    ClassName(this.name,age){
+        print("Name is $name, and age is $age");
+    }
+    void ageCheck(){
+        (age! >18||age! ==18) ? print("you can vote") : print("You cant vote") ;
+    }
+}
+
+void main(){
+    ClassName objectName = ClassName("Deepak",25);
+    objectName.ageCheck()
+}
+
+Output:
+Name is Deepak and age is 25
+Script error
+Note : script error because when we gave value to the Constructor, we didn't use this keyword then that age will work only for Constructor and we will have to initialize the age variable by objectName.age = 25 for the other methods.
+
+------------------------------------------------------------------------------------------------------------------
+
+NamedCostructor : we know that Constructor name should be same as class name but we can create Constructor by name too 
+class ClassName{
+    String? variable;
+    ClassName.namedConstructor(parameters/blank){
+        default initialization or any other work.
+    }
+}
+its the same as above or normal parameterized constructor and works same but we can create multiple constructor in class by this method.
+
+---------------------------------------------------------------------------------------------------------------------
+
+default Constructor : A default constructor is a constructor that doesn't take any parameters. If a class doesn't explicitly define a constructor, Dart implicitly provides a default constructor. This default constructor has no arguments.
+
+class Car {
+  // This is a default constructor
+  Car() {
+    print('An instance of the Car class is created');
+  }
+}
+
+void main() {
+  Car car = Car(); // An instance of the Car class is created
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,29 @@
+Class: 
+In object-oriented programming, a class is a blueprint for creating objects. A class defines the properties and methods that an object will have. For example, a class called Dog might have properties like breed, color and methods like bark, run.
+KeyPoints : 
+1. Body of the class consists of properties and functions.
+2. Properties are used to store the data. It is also known as fields or attributes.
+3. Functions are used to perform the operations. It is also known as methods.
+
+Syntax : 
+class ClassName {
+// properties or fields
+// methods or functions
+}
+
+Example:
+class Person {
+  String? name;
+  String? phone;
+  bool? isMarried;
+  int? age;
+
+  void displayInfo() {
+    print("Person name: $name.");
+    print("Phone number: $phone.");
+    print("Married: $isMarried.");
+    print("Age: $age.");
+  }
+}
+
+In this example, there is class Person with four properties: name, phone, isMarried, and age. The class also has a method called displayInfo, which prints out the values of the four properties.
